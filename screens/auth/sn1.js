@@ -45,21 +45,24 @@ const ScreenOne = props => {
         <Text variant="h6">Welcome to e-learn</Text>
         <Stack spacing={2} style={{ margin: 16, width: "90%", padding: 8 }}>
         <TextInput
-            label="username or email"
+            // label="username or email"
+            placeholder='email'
             leading={props => <Icon name="email" {...props} />}
             variant="outlined"
             style={{borderColor: "#2196F3"}}
             onChangeText={text => setEmail(text)}
           />
           <TextInput
-            label="username or email"
+            // label="username or email"
+            placeholder='username'
             leading={props => <Icon name="account" {...props} />}
             variant="outlined"
             style={{borderColor: "#2196F3"}}
             onChangeText={text => setUsername(text)}
           />
           <TextInput
-            label="password"
+            // label="password"
+            placeholder='password'
             variant="outlined"
             style={{borderColor: "#2196F3"}}
             trailing={props => (
