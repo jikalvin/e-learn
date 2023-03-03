@@ -52,8 +52,16 @@ const CourseHome = ({navigation}) => {
         navigation.navigate("Quizzes")
     }
 
+    function onLessonsPress(){
+        navigation.navigate("CourseHome")
+    }
+
     function onReferencesPress(){
         navigation.navigate("References")
+    }
+
+    function onPlayPress(){
+        navigation.navigate("Module")
     }
 
     function renderHeader(){
@@ -74,8 +82,12 @@ const CourseHome = ({navigation}) => {
                             padding: SIZES.padding
                         }}
                     >
-                        <Ionicons name="arrow-back" size={30} color="black" />
-                        <MaterialIcons name="message" size={30} color="black" />
+                        <TouchableOpacity>
+                            <Ionicons name="arrow-back" size={30} color="black" />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MaterialIcons name="message" size={30} color="black" />
+                        </TouchableOpacity>
                     </View>
                     <View
                     style={{
@@ -122,6 +134,7 @@ const CourseHome = ({navigation}) => {
                                 borderBottomWidth: 0,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onLessonsPress}
                         >
                             <Text style={{fontWeight:"bold"}}>lessons</Text>
                         </TouchableOpacity>
@@ -187,6 +200,7 @@ const CourseHome = ({navigation}) => {
                             bottom: SIZES.padding,
                             backgroundColor: COLORS.blue
                         }}
+                        onPress={onPlayPress}
                     />
                 </Card.Content>
             </Card>
@@ -274,7 +288,11 @@ const CourseHome = ({navigation}) => {
                         padding: SIZES.padding*2
                     }}
                 >
-                    <AntDesign name="play" size={30} color={COLORS.blue} />
+                    <TouchableOpacity
+                        onPress={onPlayPress}
+                    >
+                        <AntDesign name="play" size={30} color={COLORS.blue} />
+                    </TouchableOpacity>
                 </Card.Content>
                 <Card.Content
                     style={{
@@ -299,7 +317,9 @@ const CourseHome = ({navigation}) => {
                         padding: SIZES.padding*2,
                     }}
                 >
-                    <AntDesign name="download" size={30} color={COLORS.blue} />
+                    <TouchableOpacity>
+                        <AntDesign name="download" size={30} color={COLORS.blue} />
+                    </TouchableOpacity>
                 </Card.Content>
                 </View>
             </Card>

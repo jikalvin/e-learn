@@ -6,12 +6,12 @@ import {
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-// import ScreenTwo from '../screens/auth/sn2';
-import ScreenThree from '../screens/auth/sn3';
-import ScreenFour from '../screens/auth/sn4';
 import CourseHome from './course/CourseHome';
 import Quiz from './course/quiz';
 import References from './course/references';
+import ModulePage from './course/ModulePage';
+import QuizHome from './course/QuizHome';
+import QuizPage from './course/QuizPage';
 
 const Stack = createStackNavigator()
 
@@ -29,6 +29,9 @@ const CoursePage = () => {
         <Stack.Screen name="CourseHome" component={CourseHome} />
         <Stack.Screen name="Quizzes" component={Quiz} />
         <Stack.Screen name="References" component={References} />
+        <Stack.Screen name="Module" component={ModulePage} />
+        <Stack.Screen name="QuizHome" component={QuizHome} />
+        <Stack.Screen name="QuizPage" component={QuizPage} />
       </Stack.Navigator>
     </NavigationContainer>
     )

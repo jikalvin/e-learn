@@ -19,7 +19,19 @@ const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 import { COLORS, SIZES, images } from '../../constants';
 
-const References = () => {
+const References = ({navigation}) => {
+
+    function onQuizPress(){
+        navigation.navigate("Quizzes")
+    }
+
+    function onLessonsPress(){
+        navigation.navigate("CourseHome")
+    }
+
+    function onReferencesPress(){
+        navigation.navigate("References")
+    }
 
     const modules = [
         {
@@ -106,6 +118,7 @@ const References = () => {
                                 borderBottomWidth: 3,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onLessonsPress}
                         >
                             <Text style={{fontWeight:"bold", color:COLORS.blue}}>lessons</Text>
                         </TouchableOpacity>
@@ -118,6 +131,7 @@ const References = () => {
                                 borderBottomWidth: 3,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onQuizPress}
                         >
                             <Text 
                             style={{fontWeight:"bold", color:COLORS.blue}}>
@@ -132,6 +146,7 @@ const References = () => {
                                 borderBottomWidth: 0,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onReferencesPress}
                         >
                             <Text 
                                 style={{fontWeight:"bold"}}
@@ -177,12 +192,6 @@ const References = () => {
                     >
                         {title}
                     </Text>
-                    <Text
-                        style={{
-                            color:COLORS.secondary,
-                            top: 15
-                        }}
-                    >20 mins</Text>
                 </Card.Content>
                 <Card.Content
                     style={{

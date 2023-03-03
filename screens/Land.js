@@ -400,7 +400,7 @@ const Home = ({ navigation }) => {
             )
         }
         return (
-            <View style={{ padding: SIZES.padding * 2, marginTop: 20 }}>
+            <View style={{ padding: SIZES.padding * 2, paddingTop: 0, top: 0 }}>
                 <View
                     style={{
                         flexDirection: "row"
@@ -566,18 +566,13 @@ const Home = ({ navigation }) => {
             )
         }
         return (
-            <View style={{ 
-                padding: SIZES.padding * 2, 
-                paddingTop: 0, 
-                top: 0,
-                marginBottom: SIZES.padding *3
-                }}>
+            <View style={{ padding: SIZES.padding * 2, marginTop: 20 }}>
                 <View
                     style={{
                         flexDirection: "row"
                     }}
                 >
-                    <Text>Recommended</Text>
+                    <Text>Courses Offered By Your School</Text>
                     <View
                     style={{
                         borderBottomColor: 'black',
@@ -606,13 +601,13 @@ const Home = ({ navigation }) => {
                     { renderHeader() }
                     {renderMainCategories()}
                     {renderStatus()}
+                    {renderRecommended()}
                     {renderSchoolsAround()}
                     {renderTeachersAround()}
-                    {renderRecommended()}
                 </ScrollView>
                 
                 {/* {renderRestaurantList()} */}
-                <StatusBar style="light" backgroundColor={COLORS.blue} />
+                <StatusBar  backgroundColor={COLORS.blue} />
             </SafeAreaView>
     )
 }

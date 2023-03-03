@@ -19,7 +19,7 @@ const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 import { COLORS, SIZES, images } from '../../constants';
 
-const Quiz = () => {
+const Quiz = ({navigation}) => {
 
     const modules = [
         {
@@ -47,6 +47,22 @@ const Quiz = () => {
             title: "Genetics"
         },
     ]
+
+    function onQuizPress(){
+        navigation.navigate("Quizzes")
+    }
+
+    function onLessonsPress(){
+        navigation.navigate("CourseHome")
+    }
+
+    function onReferencesPress(){
+        navigation.navigate("References")
+    }
+
+    function startQuiz(){
+        navigation.navigate("QuizHome")
+    }
 
     function renderHeader(){
         return(
@@ -114,6 +130,7 @@ const Quiz = () => {
                                 borderBottomWidth: 3,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onLessonsPress}
                         >
                             <Text style={{fontWeight:"bold", color:COLORS.blue}}>lessons</Text>
                         </TouchableOpacity>
@@ -126,6 +143,7 @@ const Quiz = () => {
                                 borderBottomWidth: 0,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onQuizPress}
                         >
                             <Text 
                             style={{fontWeight:"bold"}}>
@@ -140,6 +158,7 @@ const Quiz = () => {
                                 borderBottomWidth: 3,
                                 borderRadius: SIZES.padding
                             }}
+                            onPress={onReferencesPress}
                         >
                             <Text 
                                 style={{fontWeight:"bold", color:COLORS.blue}}
@@ -155,6 +174,9 @@ const Quiz = () => {
     function renderModules(){
         const Item = ({title}) => {
             return(
+                <TouchableOpacity
+                    onPress={startQuiz}
+                >
                 <Card
                 mode='elevated'
                 elevation={5}
@@ -185,12 +207,6 @@ const Quiz = () => {
                     >
                         {title}
                     </Text>
-                    <Text
-                        style={{
-                            color:COLORS.secondary,
-                            top: 15
-                        }}
-                    >20 mins</Text>
                 </Card.Content>
                 <Card.Content
                     style={{
@@ -210,6 +226,7 @@ const Quiz = () => {
                 </Card.Content>
                 </View>
             </Card>
+            </TouchableOpacity>
             )
         }
 

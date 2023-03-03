@@ -10,6 +10,11 @@ import { isIphoneX } from 'react-native-iphone-x-helper';
 import { NavigationContainer } from '@react-navigation/native';
 
 import Land from '../screens/Land';
+import MyCourses from '../screens/MyCourses';
+import Certifications from '../screens/Certifications';
+import Downloaded from '../screens/Downloaded';
+import ChatAI from '../screens/ChatAI';
+
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -104,25 +109,6 @@ const CustomTabBar = (props) => {
 
 const Tabs = () => {
     return (
-        // <Tab.Navigator
-        //     tabBarOptions={{
-        //         showLabel: false,
-        //         style: {
-        //             position: 'absolute',
-        //             left: 0,
-        //             bottom: 0,
-        //             right: 0,
-        //             borderTopWidth: 0,
-        //             backgroundColor: "transparent",
-        //             elevation: 0,
-        //         }
-        //     }}
-        //     tabBar={(props) => (
-        //         <CustomTabBar
-        //             props={props}
-        //         />
-        //     )}
-        // >
         <Tab.Navigator
             screenOptions={({ route }) => ({
             headerShown: false,
@@ -175,7 +161,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Library"
-                component={Land}
+                component={MyCourses}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Entypo 
@@ -194,7 +180,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Courses"
-                component={Land}
+                component={Certifications}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Ionicons 
@@ -213,7 +199,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Downloads"
-                component={Land}
+                component={Downloaded}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Entypo 
@@ -232,7 +218,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Assistant"
-                component={Land}
+                component={ChatAI}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <MaterialCommunityIcons 
